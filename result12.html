@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Prediction Result</title>
+    <style>
+        body {
+            background-color: #99E1D9; /* Changed background color */
+            text-align: center;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 70%;
+            margin-top: 20px;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+        #back-button {
+            margin-top: 20px;
+        }
+
+        .c10 {
+            color:black;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1 class='c10'>Image Prediction Result</h1>
+    <img src="{{ image_path }}" alt="Uploaded Image">
+    <div id="result">
+        
+        <h3 class='c10'>Analyzing the given MRI image, the patient result is: <span style="display: inline-block;">{{ result }}</span></h3>
+
+           <h3>Deviated values</h3>
+    </div>
+    
+        {% for key, value in features.items() %}
+        <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    
+    
+</body>
+
+</html>

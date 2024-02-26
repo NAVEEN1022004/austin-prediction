@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Image Upload</title>
+<!-- Your CSS styles here -->
+<style>
+    body {
+        background-color: #99E1D9; /* Changed background color */
+        background-size: cover;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 100vh;
+        margin: 0;
+    }
+    
+    h1 {
+        margin-top: 20px;
+        text-transform: uppercase;
+    }
+    
+    #upload-container {
+        background-color: #3AAFA9 !important;
+        position: absolute;
+        color: snow;
+        bottom: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        margin-top: 20px;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    
+    #uploadForm {
+        text-align: center;
+    }
+    
+    input[type="file"] {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    
+    input[type="submit"] {
+        font-size: 18px;
+        background-color: #05716c;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        padding: 10px 20px;
+        margin-top: 10px; /* Add margin-top to center the button vertically */
+    }
+    
+    img {
+        max-width: 100%;
+        max-height: 70vh;
+        margin-top: 20px;
+        align-self: center;
+    }
+    
+    #message {
+        margin-top: 20px;
+    }
+    
+    #next-button {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: green;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    
+</style>
+</head>
+<body>
+<h1>UPLOAD IMAGE</h1>
+<form method="POST" action="/upload" enctype="multipart/form-data"  id="uploadForm">
+<div id="upload-container">
+<input type="file" name="file" accept=".jpg, .png, .jpeg" style="text-align: center;"
+id="fileInput" />
+<input type="submit" value="Upload" id="uploadButton" />
+</div>
+
+
+</body>
+</html>

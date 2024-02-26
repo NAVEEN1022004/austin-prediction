@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medical Information Form</title>
+<style>
+body {
+
+background-size: cover;
+background-color: #99E1D9;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: 100% 100%;
+font-family: Arial, sans-serif;
+text-align: center;
+margin: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+flex-direction: column;
+}
+/* Add these CSS rules for consistent input styles */
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="email"],
+select,
+textarea,
+button {
+height: 30px;
+width: 350px;
+padding: 2px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 3px;
+box-sizing: border-box;
+}
+input[type="submit"] {
+width: 350px !important;
+height: 40px !important;
+color: black !important;
+padding: 3px !important;
+border-radius: 25px !important;
+background-color: #05716c !important;
+border-color: #05716c !important;
+}
+.container {
+
+
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+h2 {
+color:#99E1D9;
+font-size: 24px;
+margin-bottom: 20px;
+}
+.form-field {
+margin-bottom: 15px;
+
+}
+</style>
+<style>
+form {
+display: inline-block;
+text-align: left;
+padding: 20px;
+
+border-radius: 20px;
+background-color:#3AAFA9;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+label {
+color:black;
+display: block;
+margin-bottom: 5px;
+font-weight: bold;
+}
+input[type="text"],
+select {
+width: 100%;
+padding: 8px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 3px;
+box-sizing: border-box;
+}
+input[type="file"] {
+margin-top: 5px;
+}
+button {
+padding: 10px 20px;
+background-color: #4CAF50;
+color: white;
+border: rgb(3, 3, 3);
+border-radius: 3px;
+cursor: pointer;
+}
+.error-message {
+color: red;
+display: none;
+}
+.hea{
+    color:black;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<form action="/next_page" method="POST" id="myForm" onsubmit="return
+validateForm()">
+<h2 class="hea">Patient Medical Information</h2>
+<div class="form-field">
+<label for="name" class="required-label">Name *</label>
+<input type="text" id="name" name="name" required>
+</div>
+<div class="form-field">
+<label for="age" class="required-label">Age *</label>
+<input type="number" id="age" name="age" required>
+</div>
+<div class="form-field">
+<label for="gender" class="required-label">Gender *</label>
+<select id="gender" name="gender" required>
+<option value="male">Male</option>
+<option value="female">Female</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div class="form-field">
+<label for="contact" class="required-label">Contact Number *</label>
+<input type="tel" id="contact" name="contact" required>
+</div>
+<div class="form-field">
+<label for="email" class="required-label">Email *</label>
+<input type="email" id="email" name="email" required>
+</div>
+<div class="form-field">
+<label for="medicalHistory" class="required-label">Medical History *</label>
+<textarea id="medicalHistory" name="medicalHistory" required></textarea>
+</div>
+<div class="form-field">
+<label for="currentMedication" class="required-label">Current Medication *</label>
+<input type="text" id="currentMedication" name="currentMedication" required>
+</div>
+<div class="form-field">
+<input type="submit" value="Submit">
+</div>
+<p id="error" class="error-message"></p>
+</form>
+</div>
+<script>
+function validateForm() {
+const name = document.getElementById("name").value;
+const age = document.getElementById("age").value;
+const gender = document.getElementById("gender").value;
+const contact = document.getElementById("contact").value;
+const email = document.getElementById("email").value;
+const medicalHistory = document.getElementById("medicalHistory").value;
+const currentMedication = document.getElementById("currentMedication").value;
+if (name === "" || age === "" || gender === "" || contact === "" || email === "" || 
+medicalHistory === "" || currentMedication === "") {
+document.getElementById("error").textContent = "All fields marked with * are required.";
+return false;
+}
+// You can add more specific validation rules for each field if needed
+return true;
+}
+</script>
+</body>
+</html>
